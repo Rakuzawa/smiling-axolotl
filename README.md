@@ -6,7 +6,7 @@ Always smiling. Always regenerating. Never gives up.
 ### Token Info
 - **Name**: Smiling Axolotl
 - **Ticker**: $AXOL
-- **Contract Address**: [ВСТАВЬ СВОЙ CA ПОСЛЕ ЛАНЧА]
+- **Contract Address**:
 - **Launch**: Fair launch on pump.fun
 - **LP Burned**: ✅
 - **Mint Revoked**: ✅
@@ -15,8 +15,10 @@ Always smiling. Always regenerating. Never gives up.
 
 ### Links
 - X/Twitter: @rakuzawa2
-- DexScreener: https://dexscreener.com/solana/[CA]
-- Pump.fun: https://pump.fun/[CA]
+- DexScreener:
+- Pump.fun: 
+- Community X: 
+
 
 ### About
 A pure meme coin about eternal positivity and portfolio regeneration after deep dives.  
@@ -26,3 +28,4 @@ Join Axolotl Army and regen to the moon! 🚀🌕
 
 
 #AXOL #AxolotlArmy #SolanaMemes
+
