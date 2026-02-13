@@ -9,7 +9,7 @@ Always smiling. Always regenerating. Never gives up.
 
 ### Token Info
 - **Name**: Smiling Axolotl
-- **Ticker**: $AXOL
+- **Ticker**: AXOL
 - **Contract Address**:
 - **Launch**: Fair launch on pump.fun
 - **LP Burned**: ✅
@@ -32,5 +32,6 @@ Join Axolotl Army and regen to the moon! 🚀🌕
 
 
 #AXOL #AxolotlArmy #SolanaMemes
+
 
 
