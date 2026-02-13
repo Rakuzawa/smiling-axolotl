@@ -14,15 +14,15 @@ Always smiling. Always regenerating. Never gives up.
 - **Total Supply**: 1,000,000,000
 
 ### Links
-- X/Twitter: [твой @]
-- Telegram: [t.me/твой]
+- X/Twitter: @rakuzawa2
 - DexScreener: https://dexscreener.com/solana/[CA]
 - Pump.fun: https://pump.fun/[CA]
 
 ### About
-Чистый мем-коин про вечный позитив и реген портфеля после дипов.  
+A pure meme coin about eternal positivity and portfolio regeneration after deep dives.  
 No premine. No dev allocation. Community takeover only.
 
 Join Axolotl Army and regen to the moon! 🚀🌕
+
 
 #AXOL #AxolotlArmy #SolanaMemes
