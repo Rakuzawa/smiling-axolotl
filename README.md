@@ -1,3 +1,7 @@
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/5b95cb06-05d5-4915-bd65-81fa8df1bf01" />
+
+
+
 # $AXOL — Smiling Axolotl Token 🦎😄
 
 **Eternally Smiling Axolotl on Solana**  
@@ -28,4 +32,5 @@ Join Axolotl Army and regen to the moon! 🚀🌕
 
 
 #AXOL #AxolotlArmy #SolanaMemes
+
 
