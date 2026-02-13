@@ -1,7 +1,7 @@
 from solana.rpc.api import Client
 from solana.publickey import PublicKey
 
-TOKEN_ADDRESS = PublicKey("ВСТАВЬ CA ЗДЕСЬ")
+TOKEN_ADDRESS = PublicKey(CA)
 
 client = Client("https://api.mainnet-beta.solana.com")
 
@@ -10,4 +10,5 @@ mint_info = client.get_token_supply(TOKEN_ADDRESS).value
 print("Total Supply:", mint_info.amount)
 
 # Для LP burn и renounce чекни вручную на Solscan/Raydium
+
 print("Проверь на Solscan: https://solscan.io/token/" + str(TOKEN_ADDRESS))
