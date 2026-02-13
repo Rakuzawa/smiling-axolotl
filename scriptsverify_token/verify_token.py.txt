@@ -1,0 +1,93 @@
+"""
+$AXOL Token Verification Script
+
+A simple Python script to verify key safety features of the $AXOL token on Solana.
+
+Features:
+- Displays the token contract address
+- Checks and prints the total token supply
+- Checks if Mint Authority is revoked (disabled) — critical for fair launch
+- Provides links and instructions for manual verification (LP burn, renounced, etc.)
+
+This script helps demonstrate transparency for the community.
+
+Requirements:
+    pip install solana
+
+Run with: python verify_token.py
+"""
+
+from solana.rpc.api import Client
+from solana.publickey import PublicKey
+
+# =============================================================================
+# REPLACE THIS WITH YOUR ACTUAL TOKEN CONTRACT ADDRESS AFTER LAUNCH!
+# Example: PublicKey("7xKX...your_full_CA_here")
+# =============================================================================
+TOKEN_ADDRESS = PublicKey("INSERT_YOUR_CONTRACT_ADDRESS_HERE")
+
+# Solana Mainnet RPC endpoint (public)
+client = Client("https://api.mainnet-beta.solana.com")
+
+def check_total_supply():
+    """Fetch and display the total token supply"""
+    try:
+        response = client.get_token_supply(TOKEN_ADDRESS)
+        if response.value:
+            amount = response.value.amount
+            decimals = response.value.decimals
+            ui_amount = response.value.ui_amount_string
+            print(f"Total Supply: {amount} tokens")
+            print(f"             ({ui_amount} with {decimals} decimals)")
+            print("   → Expected for fair launch: 1,000,000,000 tokens (1 billion)\n")
+        else:
+            print("Error: Unable to retrieve token supply\n")
+    except Exception as e:
+        print(f"Error fetching supply: {e}\n")
+
+def check_mint_authority_revoked():
+    """Check if the mint authority is revoked (set to None)"""
+    try:
+        account_info = client.get_account_info(TOKEN_ADDRESS)
+        if not account_info.value:
+            print("Error: Token account not found\n")
+            return
+        
+        data = account_info.value.data
+        
+        # Mint authority COption starts at byte offset 4 (after supply u64)
+        # 0 = None (revoked), 1 = Some (active)
+        mint_authority_option = data[4]
+        
+        if mint_authority_option == 0:
+            print("Mint Authority: REVOKED ✅ (No one can mint new tokens)")
+        else:
+            print("Mint Authority: ACTIVE ❌ (New tokens can still be minted)")
+    except Exception as e:
+        print(f"Error checking mint authority: {e}\n")
+
+def print_manual_checks():
+    """Print helpful links and manual verification steps"""
+    print("Manual verification recommended:")
+    print(f"   Solscan: https://solscan.io/token/{TOKEN_ADDRESS}")
+    print("     → Check: Mint Authority = Disabled")
+    print("     → Check: Freeze Authority = Disabled")
+    print("     → Check: LP tokens burned (balance 0 in Raydium pool)")
+    print("")
+    print(f"   DexScreener: https://dexscreener.com/solana/{TOKEN_ADDRESS}")
+    print("     → Look for green checks: Mint Revoked, LP Burned, Renounced")
+    print("")
+    print("   RugCheck.xyz or Birdeye.so — additional safety scans\n")
+
+def main():
+    print("$AXOL — Smiling Axolotl Token Verification\n")
+    print(f"Token Address (CA): {TOKEN_ADDRESS}\n")
+    
+    check_total_supply()
+    check_mint_authority_revoked()
+    print_manual_checks()
+    
+    print("This is a fair launch meme coin on Solana — always DYOR! 😄🦎")
+
+if __name__ == "__main__":
+    main()
